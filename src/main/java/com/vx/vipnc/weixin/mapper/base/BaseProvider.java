@@ -26,7 +26,7 @@ public class BaseProvider {
         return sql.toString() ;
     }
 
-    public static  String updateT(BaseEntity baseEntity){
+    public static  String updateByPrimaryKey(BaseEntity baseEntity){
         SQL sql =new SQL();
         sql.UPDATE(baseEntity.getTableName());
         Field[] declaredFields = baseEntity.getClass().getDeclaredFields();
@@ -40,4 +40,44 @@ public class BaseProvider {
         System.out.println(sql.toString());
         return  sql.toString();
     }
+
+
+    public static String updateT(){
+
+    }
+
+
+    public static String deleteT(BaseEntity baseEntity){
+        SQL sql =new SQL();
+        Field[] declaredFields = baseEntity.getClass().getDeclaredFields();
+        for (Field  declaredField :declaredFields) {
+            String key = declaredField.getName();
+            Object value=CommonTool.invokeModelNoParameterMethod(baseEntity,"get"+CommonTool.getTopUpperString(key));
+           if (value ==null || key.equals(baseEntity.getPrimaryKey())) continue; ;
+            sql.WHERE("`"+baseEntity.getPrimaryKey()+"`=#{"+baseEntity.getPrimaryKey()+"}");
+            System.out.println(sql);
+        }
+        return  sql.toString();
+    }
+
+    public static String getAllTWithCondition(String selectStatement,String tableName ,
+                                              String condition ,String orderCondition ,
+                                              Integer start ,Integer size){
+        StringBuffer sb=new StringBuffer();
+        if (selectStatement==null){
+            sb.append("* ");
+        }else {
+            sb.append(selectStatement +" , ");
+        }
+        sb.append(" from") ;
+        sb.append( tableName + "  ");
+        if ( condition !=null){
+            sb.append( "where " + condition+"  ");
+        }
+        if ( orderCondition !=null){
+
+        }
+
+    }
+
 }
