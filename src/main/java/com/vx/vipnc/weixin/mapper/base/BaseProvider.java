@@ -41,12 +41,6 @@ public class BaseProvider {
         return  sql.toString();
     }
 
-
-    public static String updateT(){
-
-    }
-
-
     public static String deleteT(BaseEntity baseEntity){
         SQL sql =new SQL();
         Field[] declaredFields = baseEntity.getClass().getDeclaredFields();
@@ -75,8 +69,16 @@ public class BaseProvider {
             sb.append( "where " + condition+"  ");
         }
         if ( orderCondition !=null){
-
+            sb.append( "order by "+ orderCondition);
         }
+        if ( start !=null || size != null){
+            sb.append("limit ");
+            sb.append(null !=start && start>=0 ?start:0);
+            sb.append(", ");
+            sb.append(size !=null && size>=0?size:10);
+        }
+        System.err.println(sb.toString());
+        return sb.toString();
 
     }
 
