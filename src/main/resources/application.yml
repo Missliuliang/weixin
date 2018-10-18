@@ -1,0 +1,49 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    platform: mysql
+    username: root
+    password: ltlroot
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://111.231.66.170:3306/lxy?useSSL=false&characterEncoding=utf-8
+mybatis:
+  type-aliases-package: com.lxy.weixin.model
+
+server:
+  port: 80
+
+---
+spring:
+  profiles: dev
+showapi:
+  showapiappid: 74276
+  showapiappsecret: 350bd18661b84939bd898b84963be8a5
+  zidianappid: 76025
+  zidianappsecret: 2c517b1264d64c6ab9f95bad97c9784d
+  showapisign:
+  showapiresgzip: 0
+  tulingurl: http://route.showapi.com/60-27
+  chengyuzhushiurl: https://route.showapi.com/1196-2
+  chengyubykeywordurl: https://route.showapi.com/1196-1
+  zidianurl: http://route.showapi.com/1524-5
+weixin:
+  appid: wx7e4415b711841d0a
+  secret: 65ff50b51212a21495b778b5d36c55e8
+---
+spring:
+  profiles: prod
+showapi:
+  showapiappid: 74276
+  showapiappsecret: 350bd18661b84939bd898b84963be8a5
+  zidianappid: 76025
+  zidianappsecret: 2c517b1264d64c6ab9f95bad97c9784d
+  showapisign:
+  showapiresgzip: 0
+  tulingurl: http://route.showapi.com/60-27
+  chengyuzhushiurl: https://route.showapi.com/1196-2
+  chengyubykeywordurl: https://route.showapi.com/1196-1
+  zidianurl: http://route.showapi.com/1524-5
+weixin:
+  appid: wxdda693860abc31b7
+  secret: 65ff50b51212a21495b778b5d36c55e8
