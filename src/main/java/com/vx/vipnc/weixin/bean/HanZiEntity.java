@@ -9,11 +9,20 @@ public class HanZiEntity extends BaseEntity implements Serializable {
     private String hanZi;
     private String pinYin;
     private String buShou ;
+    private String bihua;
     private String words ;
     private String wuBi;
     private String basic_explain ;
-    private String detail_explain ;
+    private String detail_explain ;  //编辑 ，讲解，解释 详解
     private  String data ;
+
+    public String getBihua() {
+        return bihua;
+    }
+
+    public void setBihua(String bihua) {
+        this.bihua = bihua;
+    }
 
     public String getHanZi() {
         return hanZi;

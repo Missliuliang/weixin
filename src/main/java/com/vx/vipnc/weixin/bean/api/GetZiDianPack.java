@@ -20,7 +20,7 @@ public class GetZiDianPack {
 
     private  String detail_explain ; //详述 解释
 
-    private String basic_explain ;
+    private Object basic_explain ;
 
     public String getRet_code() {
         return ret_code;
@@ -94,7 +94,7 @@ public class GetZiDianPack {
         this.detail_explain = detail_explain;
     }
 
-    public String getBasic_explain() {
+    public Object getBasic_explain() {
         return basic_explain;
     }
 
