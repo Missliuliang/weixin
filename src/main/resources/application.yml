@@ -5,7 +5,7 @@ spring:
     platform: mysql
     username: root
     password: ltlroot
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://111.231.66.170:3306/lxy?useSSL=false&characterEncoding=utf-8
 mybatis:
   type-aliases-package: com.lxy.weixin.model

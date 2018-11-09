@@ -76,7 +76,7 @@ public class ApiService extends LoggerConfig {
         return  null;
     }
 
-    public GetChengyuzhushiPack GetChengyuzhushiByKeyWord(String key , String page , String rows){
+    public GetChengyuzhushiPack getChengyuzhushiByKeyWord(String key , String page , String rows){
         SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HHmmss");
         Map<String ,String>  map =new HashMap<>();
         map.put("showapi_appid",showapiAppid);

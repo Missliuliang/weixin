@@ -4,6 +4,16 @@ public class GetChengyuzhushiPack {
 
     private String ret_code ;
 
+    private String total;
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
     private GetChengyuzhushi data;
 
     private String ret_message ;
